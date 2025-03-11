@@ -1,5 +1,6 @@
 import { request, test, expect } from '@playwright/test';
 
+
 test('GET /posts', async () => {
   const apiRequest = await request.newContext();
   const response = await apiRequest.get('https://jsonplaceholder.typicode.com/posts');
@@ -18,11 +19,11 @@ test('GET /posts/{id}', async () => {
 test('POST /posts', async () => {
   const apiRequest = await request.newContext();
   const response = await apiRequest.post('https://jsonplaceholder.typicode.com/posts', {
-    data: { title: 'foo', body: 'bar', userId: 1 },
+    data: { title: 'QA Role', body: 'Testing', userId: 1 },
   });
   expect(response.status()).toBe(201);
   const responseBody = await response.json();
-  expect(responseBody.title).toBe('foo');
+  expect(responseBody.title).toBe('QA Role');
 });
 
 test('PUT /posts/{id}', async () => {
