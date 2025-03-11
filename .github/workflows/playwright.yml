@@ -32,7 +32,7 @@ jobs:
         run: npx playwright install --with-deps
         
       - name: Run ${{ matrix.test-group }} tests
-        run: npx playwright test tests/${{ matrix.test-group }} --headed=false
+        run: npx playwright test tests/${{ matrix.test-group }}
         
       - name: Upload test results
         if: always()
